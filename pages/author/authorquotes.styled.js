@@ -3,11 +3,14 @@ import styled from 'styled-components';
 export const StyledAuthorQuotes = styled.div`
   width: 80%;
   margin: 0 auto;
-  .back {
-    margin-top: 32px;
+  a.back {
+    position: absolute;
+    top: 32px;
+    left: 100px;
     cursor: pointer;
+    z-index: 10;
   }
   .authname {
-    margin-top: 86px;
+    margin-top: 100px;
   }
 `;

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
@@ -42,9 +43,9 @@ const AuthorQuotes = () => {
 
   return (
     <StyledAuthorQuotes>
-      <div onClick={() => router.back()} className="back">
-        {`<- Back`}
-      </div>
+      <Link href="/">
+        <a className="back">{`<- Back`}</a>
+      </Link>
       <Random getRandom={getRandomAuthorQuote} isAuthor={true} />
       <h1 className="authname">{authname}</h1>
       {quotes.map((quote) => (
