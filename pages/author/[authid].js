@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
 import Quote from '../../components/Quote/Quote';
 import Random from '../../components/Random/Random';
-import { StyledAuthorQuotes } from './authorquotes.styled';
+import StyledAuthorQuotes from './authorquotes.styled';
 
 const AuthorQuotes = () => {
   const router = useRouter();

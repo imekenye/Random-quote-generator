@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledAuthorQuotes = styled.div`
+const StyledAuthorQuotes = styled.div`
   width: 80%;
   margin: 0 auto;
   a.back {
@@ -14,3 +14,5 @@ export const StyledAuthorQuotes = styled.div`
     margin-top: 100px;
   }
 `;
+
+export default StyledAuthorQuotes;
