@@ -1,13 +1,18 @@
 import React from 'react';
 import { StyledAuthor } from './Author.styled';
+import Link from 'next/link';
 
 const Author = ({ author, genre }) => {
   return (
     <StyledAuthor>
       <div>
-        <div className="author">{author}</div>
+        <Link href={`/author/${author}`}>
+          <a className="author">{author}</a>
+        </Link>
+
         <div className="genre">{genre}</div>
       </div>
+
       <svg
         width="16"
         height="8"

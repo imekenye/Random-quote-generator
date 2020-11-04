@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyledRandom } from './Random.styled';
 
-const Random = ({ getQuote }) => {
+const Random = ({ getQuote, isAuthor, getRandom }) => {
   return (
-    <StyledRandom onClick={getQuote}>
+    <StyledRandom onClick={!isAuthor ? getQuote : getRandom}>
       <div className="random">Random</div>
       <svg
         width="16"

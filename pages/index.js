@@ -5,10 +5,12 @@ import Random from '../components/Random/Random';
 import { useState, useEffect } from 'react';
 
 import styles from '../styles/Home.module.css';
+import Footer from '../components/Footer/Footer';
 
 export default function Home() {
   // console.log(quote);
   const [randomQuote, setRandomQuote] = useState({});
+  const [isAuthor, setIsAuthor] = useState(false);
   const getQuote = async () => {
     console.log('clicked');
     const res = await fetch(
@@ -32,28 +34,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Random getQuote={getQuote} />
+        <Random getQuote={getQuote} isAuthor={isAuthor} />
         <Quote quote={randomQuote.quote} />
         <Author author={randomQuote.author} genre={randomQuote.genre} />
       </main>
 
-      <footer className={styles.footer}>imekenye@DevChallenges.io</footer>
+      <Footer />
     </div>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch(
-    'https://quote-garden.herokuapp.com/api/v2/quotes/random'
-  );
-  const quote = await res.json();
-
-  return {
-    props: {
-      id: quote.quote._id,
-      quote: quote.quote.quoteText,
-      author: quote.quote.quoteAuthor,
-      genre: quote.quote.quoteGenre,
-    },
-  };
 }
